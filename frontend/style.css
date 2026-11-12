@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root{
+    --light-background: rgb(255, 255, 255);
+    --dark-background: #333333;
+    --card-panels: #EEEEEE;
+    --button-title-navbar: #245C46;
+    --light-font: #FFFF;
+}
+
+body{
+    font-family: 'Open Sans',sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+header,footer,nav,button{
+    background-color: var(--button-title-navbar);
+    color: var(--light-font);
+}
