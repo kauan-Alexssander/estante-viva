@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estante Viva – Gerenciamento de catálogo</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
 
   <header>
     <div class="marca">
       <h1>Estante Viva</h1>
-      <p>Gerenciamento de livros</p>
     </div>
     <nav aria-label="Navegação principal">
       <a href="#catalogo">Catálogo</a>
@@ -20,6 +20,8 @@
   </header>
 
   <main>
+
+    <h2>Gerenciamento de livros</h2>
 
     <!-- Formulário de cadastro / edição -->
     <section class="painel" id="cadastro">
@@ -35,15 +37,15 @@
           </div>
 
           <div class="campo">
-            <label for="preco">Preço (R$) *</label>
-            <input type="text" id="preco" placeholder="0,00" inputmode="decimal" autocomplete="off">
-            <span class="erro-campo" id="erro-preco"></span>
-          </div>
-
-          <div class="campo">
             <label for="autor">Autor *</label>
             <input type="text" id="autor" placeholder="Informe o autor" maxlength="120" autocomplete="off">
             <span class="erro-campo" id="erro-autor"></span>
+          </div>
+
+          <div class="campo">
+            <label for="preco">Preço (R$) *</label>
+            <input type="text" id="preco" placeholder="0,00" inputmode="decimal" autocomplete="off">
+            <span class="erro-campo" id="erro-preco"></span>
           </div>
 
           <div class="campo">
@@ -52,14 +54,14 @@
             <span class="erro-campo" id="erro-quantidade"></span>
           </div>
 
+          <div class="acoes-form">
+            <button type="submit" id="btnSalvar">Cadastrar livro</button>
+            <button type="button" id="btnCancelar" hidden>Cancelar edição</button>
+          </div>
+
         </div>
 
-        <div class="acoes-form">
-          <button type="submit" id="btnSalvar">Cadastrar livro</button>
-          <button type="button" id="btnCancelar" hidden>Cancelar edição</button>
-        </div>
-
-        <div id="mensagem" role="status" aria-live="polite"></div>
+        <div id="mensagem" role="status" aria-live="polite">Área para mensagens de sucesso ou erro</div>
       </form>
     </section>
 
@@ -94,10 +96,20 @@
               <button type="button">Excluir</button>
             </td>
           </tr>
+          <tr>
+            <td>Título cadastrado</td>
+            <td>Nome do autor</td>
+            <td>R$ 0,00</td>
+            <td>0</td>
+            <td>
+              <button type="button">Editar</button>
+              <button type="button">Excluir</button>
+            </td>
+          </tr>
         </tbody>
       </table>
 
-      <div id="vazio" hidden>Nenhum livro encontrado.</div>
+      <div id="vazio">Sem registros: “Nenhum livro encontrado.”</div>
     </section>
 
   </main>
